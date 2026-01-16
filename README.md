@@ -139,7 +139,7 @@ Se utiliza un **JSON “Single Source of Truth”** que representa el estado com
 | Velocidad constante           | ✅ Se contempla |
 | Brillo / Iluminación          | ✅ Se contempla |
 | Interacción con objetos       | ✅ Se contempla |
-| Feedback auditivo espacial    | ✅ Se contempla |
+| Feedback auditivo espacial    | ❌ no se contempla |
 | Reconocimiento de voz         | ✅ Se contempla |
 | Seguimiento corporal completo | ❌ No aplica   |
 
