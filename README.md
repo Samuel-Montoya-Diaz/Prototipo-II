@@ -55,11 +55,10 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 
 A continuación, una muestra de las pistas según cómo era la historia original, y a cómo se podría escalar a partir del prototipo.
 
-![Grabador](Ilustraciones/grabador.png)
-![Nota](Ilustraciones/nota.png)
-![Inhibidor](Ilustraciones/inhibidor.png)
-![Copa](Ilustraciones/copa.png)
-![Gemelo](Ilustraciones/gemelo.png)
+![Grabador](Img/Grabadora.png)
+![Nota](Img/Escenario.png)
+![Inhibidor](Img/Inhibidor.png)
+![Copa](Img/Copa.png)
 
 ---
 
