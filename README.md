@@ -18,9 +18,9 @@
 5. [Arquitectura de Datos](#arquitectura-de-datos)  
 6. [Implementación Técnica en Unity 6](#implementación-técnica-en-unity-6)  
 7. [Integración de Interacciones VR](#integración-de-interacciones-vr)  
-8. [Sensores y Interfaces Multimodales](#sensores-y-interfaces-multimodales)  
-9. [Checklist de Recomendaciones de Diseño VR](#checklist-de-recomendaciones-de-diseño-vr)  
-10. [Aspectos Destacables y Hitos de Programación](#aspectos-destacables-y-hitos-de-programación)  
+8. [Checklist de Recomendaciones de Diseño VR](#checklist-de-diseño-vr)  
+9. [Aspectos Destacables y Hitos de Programación](#aspectos-destacables-y-hitos-de-programación)
+10. [Acuerdos del Grupo](#acuerdos-del-grupo)  
 
 ---
 
@@ -120,16 +120,6 @@ Se utiliza un **JSON “Single Source of Truth”** que representa el estado com
 
 ---
 
-## Aspectos Destacables y Hitos de Programación
-
-- Integración de un JSON centralizado que controla todo el flujo de pistas y NPCs.
-- Uso de XR Interaction Toolkit + Sentis para interacción física e interrogatorio dinámico.
-- Implementación de un sistema de sospecha de NPCs, que cambia diálogo y comportamientos según acciones del jugador.
-- Creación de UI en VR para diagnosticar progreso de pistas sin romper inmersión.
-- Diseño modular de datos (GameStateRoot) que facilita escalabilidad y futuras expansiones del juego.
-
----
-
 ## Checklist de Diseño VR
 
 | Funcionalidad / Sensor        | Estado           |
@@ -143,3 +133,81 @@ Se utiliza un **JSON “Single Source of Truth”** que representa el estado com
 | Feedback auditivo espacial    | ✅ Se contempla |
 | Reconocimiento de voz         | ✅ Se contempla |
 | Seguimiento corporal completo | ❌ No aplica   |
+
+---
+
+## Aspectos Destacables y Hitos de Programación
+
+- Integración de un JSON centralizado que controla todo el flujo de pistas y NPCs.
+- Uso de XR Interaction Toolkit + Sentis para interacción física e interrogatorio dinámico.
+- Implementación de un sistema de sospecha de NPCs, que cambia diálogo y comportamientos según acciones del jugador.
+- Creación de UI en VR para diagnosticar progreso de pistas sin romper inmersión.
+- Diseño modular de datos (GameStateRoot) que facilita escalabilidad y futuras expansiones del juego.
+
+---
+
+## Acuerdos del Grupo
+### Persona 1 – Unity / VR / Escena
+**Responsabilidades principales:**
+- Crear y mantener el proyecto en Unity con integración VR (Meta XR SDK).
+- Montar y configurar la escena principal, incluyendo iluminación y posición del jugador.
+- Colocar los NPCs interactivos en la escena y configurar sus prefabs.
+- Implementar la lógica básica de interacción con NPCs y objetos.
+- Desarrollar UI básica para diálogos y feedback visual de pistas.
+- Gestionar el ClueManager para actualizar estados de pistas.
+
+**Tareas clave:**
+- Crear proyecto Unity + Meta XR SDK.  
+- Importar paquetes de assets y montar la escena.  
+- Configurar player spawn e iluminación básica.  
+- Colocar 3 NPCs (prefabs simples).  
+- Script NPCInteraction: detectar proximidad y seleccionar NPC activo.  
+- Implementar UI básica de diálogo y feedback visual de pistas.
+
+---
+
+### Persona 2 – Backend / IA
+**Responsabilidades principales:**
+- Desarrollar el backend que gestiona la lógica de diálogo y transcripción de voz.  
+- Integrar Whisper y el LLM para permitir diálogos por voz con NPCs.  
+- Gestionar endpoints y prompts dinámicos, así como condiciones de revelado de pistas.  
+- Optimizar latencia y coherencia de respuestas del LLM.  
+
+**Tareas clave:**
+- Configurar backend mínimo (Express / FastAPI).  
+- Crear endpoint `/transcribe` para Whisper y `/dialogue` para diálogos.  
+- Implementar prompt base común a todos los NPCs.  
+- Entregar respuestas estructuradas con información sobre diálogos y pistas reveladas.  
+- Manejo de estados del misterio y control de incoherencias del LLM.
+
+---
+
+### Persona 3 – Narrativa / Diseño del Misterio
+**Responsabilidades principales:**
+- Definir y estructurar la narrativa del misterio.  
+- Crear las pistas clave y asignarlas a los NPCs.  
+- Redactar fichas de NPC detallando personalidad, conocimientos y secretos.  
+- Ajustar diálogos, frases evasivas y finales de la historia para la demo.  
+
+**Tareas clave:**
+- Definir el misterio en un párrafo claro y comprensible.  
+- Crear 3–4 pistas claras y asignarlas a los NPCs correspondientes.  
+- Redactar fichas de NPC (personalidad, qué sabe, qué oculta).  
+- Mantener los estados globales del caso en JSON para integración con Unity y backend.  
+- Redactar el guión corto de demo para la presentación.
+
+---
+
+### Persona 4 – Integración / QA / Demo
+**Responsabilidades principales:**
+- Asegurar que todos los sistemas funcionen correctamente en conjunto (Unity + Backend + Narrativa).  
+- Realizar pruebas en hardware VR (Quest) para detectar errores y riesgos técnicos.  
+- Proponer soluciones o fallbacks cuando algo falle (por ejemplo, texto si la voz no funciona).  
+- Preparar la demo y validar la experiencia final.  
+
+**Tareas clave:**
+- Probar escena en Quest y validar interacciones básicas.  
+- Probar backend de manera manual y forzar casos límite del LLM.  
+- Ajustar prompts con Persona 2 según resultados de QA.  
+- Verificar coherencia narrativa y estabilidad del prototipo.  
+- Preparar ensayo de demo de 3–5 minutos y explicación de automatización y escalabilidad.
