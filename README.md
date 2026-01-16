@@ -46,6 +46,12 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 - Dinámica principal: Los jugadores deben combinar pistas físicas (objetos VR) y digitales (grabaciones de voz, inhibidores de señal, notas) para resolver el caso.  
 - Atmósfera: Cine Noir con iluminación URP en tiempo real, sombras suaves y contrastes dramáticos.
 
+### Ilustraciones
+![Grabador](Ilustraciones/grabador.png)
+![Nota](Ilustraciones/nota.png)
+![Inhibidor](Ilustraciones/inhibidor.png)
+![Copa](Ilustraciones/copa.png)
+![Gemelo](Ilustraciones/gemelo.png)
 ---
 
 ## Pistas y NPCs
