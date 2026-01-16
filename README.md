@@ -59,7 +59,7 @@ A continuación, una muestra de las pistas según cómo era la historia original
 ![Nota](Img/Escenario.png)
 ![Inhibidor](Img/Inhibidor.png)
 ![Copa](Img/Copa.png)
-
+![Muestra](Img/Prototipo.gif)
 ---
 
 ## Pistas y NPCs
