@@ -1,4 +1,4 @@
-# Prototipo - Interfaces Inteligentes
+# Prototipo - Interfaces Inteligentes 2025/2026
 
 ## Autores
 - Carolina Acosta Acosta
@@ -26,7 +26,7 @@
 
 ## Descripción General
 *"El Último Brindis en la Suite 602"* es un prototipo de juego de misterio en VR desarrollado en **Unity 6**, diseñado para sumergir al jugador en una experiencia de investigación de crimen tipo **Cine Noir**.  
-El jugador debe investigar la muerte de **Julian Vane**, un marchante de arte y blanqueador de capitales, interactuar con objetos y NPCs, descubrir pistas digitales y físicas, y finalmente identificar al culpable antes de que el sistema de seguridad se reinicie.  
+El jugador debe investigar la muerte de **Julian Vane**, un traficante de arte y blanqueador de capitales, interactuar con objetos y NPCs, descubrir pistas digitales y físicas, y finalmente identificar al culpable antes de que el sistema de seguridad se reinicie.  
 
 El proyecto combina narrativa inmersiva, interacción física con pistas en VR y lógica de interrogatorio basada en un **sistema de pistas dinámico**.
 
@@ -35,18 +35,21 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 ## Objetivo del Juego
 - **Recuperar el Libro de Cuentas** digital que está protegido por biometría.  
 - **Acusar correctamente al culpable** antes de que las puertas de seguridad se desbloqueen.  
-- **Explorar y analizar pistas** distribuidas en la oficina de Julian.  
+- **Explorar y analizar pistas** distribuidas en el piso de Julian.  
 - **Interrogar a los NPCs**, aumentando o disminuyendo su nivel de sospecha dependiendo de las pistas que se les presenten.  
 
 ---
 
 ## Escenario y Narrativa
-- Ubicación: Oficina privada de Julian Vane (Suite 602).  
-- Escena del crimen: Cuerpo de Julian sobre su escritorio, copa de coñac volcada y quemadura en la muñeca izquierda.  
+- Ubicación: Piso de Julian Vane (Suite 602).  
+- Escena del crimen: Cuerpo de Julian en el suelo, dos copas de vino en una bandeja, y quemadura en la muñeca izquierda.  
 - Dinámica principal: Los jugadores deben combinar pistas físicas (objetos VR) y digitales (grabaciones de voz, inhibidores de señal, notas) para resolver el caso.  
 - Atmósfera: Cine Noir con iluminación URP en tiempo real, sombras suaves y contrastes dramáticos.
 
 ### Ilustraciones
+
+A continuación, una muestra de las pistas según cómo era la historia original, y a cómo se podría escalar a partir del prototipo.
+
 ![Grabador](Ilustraciones/grabador.png)
 ![Nota](Ilustraciones/nota.png)
 ![Inhibidor](Ilustraciones/inhibidor.png)
@@ -59,7 +62,7 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 ### Pistas Clave
 | ID | Nombre | Descripción | NPC Relacionado |
 |----|--------|-------------|----------------|
-| CLUE_01_GEMELO | Gemelo Desparejado | Gemelo de oro bajo la alfombra | Marcus |
+| CLUE_01_GEMELO | Gemelo de Camiseta Desparejado | Gemelo de oro bajo la alfombra | Marcus |
 | CLUE_02_COPA | Copa con Lápiz Labial | Restos carmín de lápiz labial | Elena |
 | CLUE_03_INHIBIDOR | Inhibidor de Señal | Dispositivo electrónico escondido | Leo |
 | CLUE_04_NOTA | Nota de Chantaje | Papel arrugado con amenaza | Todos |
@@ -69,7 +72,7 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 1. **Marcus “La Roca”**  
    - Rol: Guardaespaldas personal  
    - Personalidad: Estoico, nervioso, evita contacto visual con cadáver  
-   - Oculta: Gemelo perdido  
+   - Oculta: Gemelo de camiseta perdido  
 
 2. **Elena Vance** *(culpable)*  
    - Rol: Socia y ex-esposa  
@@ -79,7 +82,7 @@ El proyecto combina narrativa inmersiva, interacción física con pistas en VR y
 3. **Leo “Bits”**  
    - Rol: Experto en seguridad/hacker  
    - Personalidad: Hiperactivo, paranoico  
-   - Oculta: Instalación del inhibidor por orden de Elena  
+   - Oculta: Instalación del inhibidor, por orden de Elena  
 
 ---
 
@@ -109,7 +112,7 @@ Se utiliza un **JSON “Single Source of Truth”** que representa el estado com
 - URP (Universal Render Pipeline): Iluminación en tiempo real con estilo Cine Noir.
 - Sentis: Para interacción avanzada con NPCs, mostrando reacciones a pistas acercadas físicamente.
 - Clases Serializables en C#: Para mapear el JSON y manejar estados de juego y NPCs.
-- GameDataManager: Script central que:
+- GameDataManager: Script central que
   - Carga y guarda JSON
   - Actualiza pistas
   - Actualiza hitos narrativos
@@ -153,6 +156,9 @@ Se utiliza un **JSON “Single Source of Truth”** que representa el estado com
 ---
 
 ## Acuerdos del Grupo
+
+Se ha realizado la siguiente división de tareas, para poder organizar el trabajo mejor, pero realmente todos han acabado participando en cada parte de una forma u otra:
+
 ### Persona 1 – Unity / VR / Escena
 **Responsabilidades principales:**
 - Crear y mantener el proyecto en Unity con integración VR (Meta XR SDK).
